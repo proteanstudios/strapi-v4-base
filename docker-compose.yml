@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  database:
+    image: mysql:8.0.32
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: test
+    networks:
+      - backend
+  adminer:
+    image: adminer:latest
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - backend
+  backend:
+    build: 
+      context: ./backend
+      target: ${STRAPI_BUILD_TARGET}
+    env_file:
+      - ./backend/.env
+    volumes:
+      - ./backend/config:/usr/src/app/config
+      - ./backend/src:/usr/src/app/src
+      - ./backend/package.json:/opt/package.json
+      - ./backend/yarn.lock:/opt/yarn.lock
+      - ./backend/.env:/usr/src/app/.env
+      - ./backend/public/uploads:/usr/src/app/public/uploads
+    ports:
+      - 1337:1337
+    networks:
+      - backend
+    depends_on:
+      - database
+networks:
+  backend:
+
