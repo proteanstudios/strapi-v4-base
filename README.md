@@ -2,11 +2,11 @@
 
 ## Usage
 - Don't eat that! for sure, lmaooo
-- This one aim to make a product ready Strapi V4 CMS image, which can be deploy to anywhere, from on-premise server to K8S, Cloud server...
+- This one aims to make a product ready Strapi V4 CMS image, which can be deployed anywhere, from on-premise server to K8S, Cloud...
 
 ## How to use 
-- This repo integrated eslint and [husky](https://typicode.github.io/husky/#/) so you can freely config it as documented on their homepage. Rules also defined but you can change to your taste without restriction
-- To config ESLint run on vscode autoformat on save. To disable it (not recommended) go to `.vscode/settings.json` and comment out the file
+- The repo integrated eslint and [husky](https://typicode.github.io/husky/#/) so you can freely config it as documented on their homepage. Rules also defined but you can change to your taste without restriction
+- ESLint run on vscode autoformat on save. To disable it (not recommended) go to `.vscode/settings.json` and comment out all the lines
 - To change rules, go to `.eslintrc` file `rules` section
 
 ## How it can be product ready strapi?
